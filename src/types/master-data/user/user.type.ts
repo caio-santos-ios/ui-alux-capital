@@ -14,6 +14,20 @@ export const ResetUser: TUser = {
     password: ""
 }
 
+export type TUserResetPassword = {
+    id: string;
+    password: string;
+    newPassword: string;
+    confirmPassword: string;
+}
+
+export const ResetUserResetPassword: TUserResetPassword = {
+    id: "",
+    password: "",
+    newPassword: "",
+    confirmPassword: ""
+}
+
 export type TUserLogged = {
     photo: string;
     name: string;

@@ -34,8 +34,8 @@ const AppSidebar: React.FC = () => {
   const getAuthorizedMenu = useCallback(() => {
     if (typeof window === "undefined") return [];
 
-    const modulesStr = localStorage.getItem("Alux CapitalModules");
-    const masterStr = localStorage.getItem("Alux CapitalMaster");
+    const modulesStr = localStorage.getItem("AluxCapitalModules");
+    const masterStr = localStorage.getItem("AluxCapitalMaster");
     const isMaster = masterStr ? masterStr == "true" : false;
 
     if (!modulesStr) return menu;
@@ -65,8 +65,6 @@ const AppSidebar: React.FC = () => {
             
             newItem.authorized = authorized;
             
-            foundModule.routines.find((x: any) => console.log(x.permissions))
-  
             newItem.subItems = newItem.subItems?.map((sub) => ({
               ...sub,
               authorized: foundModule.routines.some((x: any) => 

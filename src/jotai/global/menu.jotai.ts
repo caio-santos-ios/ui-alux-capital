@@ -3,14 +3,14 @@ import { atom } from "jotai";
 
 export const menuOpenAtom = atom<boolean>(false);
 export const menuRoutinesAtom = atom<NavItem[]>([
-  {
-    icon: "MdChat",
-    name: "Chat",
-    authorized: false,
-    code: "C",
-    path: "/chat",          // ← sem subItems, vai direto para a rota
-    subItems: undefined,
-  },
+  // {
+  //   icon: "MdChat",
+  //   name: "Chat",
+  //   authorized: false,
+  //   code: "C",
+  //   path: "/chat",          
+  //   subItems: undefined,
+  // },
   {
     icon: "FiSettings",
     name: "Configurações",

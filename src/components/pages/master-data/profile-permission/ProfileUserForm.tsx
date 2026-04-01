@@ -180,6 +180,7 @@ export default function ProfileUserForm({id}: TProp) {
                     const IconComponent = icons[menu.icon];
 
                     if(menu.code === "A" && !isMaster) return null;
+                    if(!menu.subItems) return null;
 
                     return (
                       <li className="col-span-6 lg:col-span-3 relative p-5 bg-white border border-gray-200 rounded-xl shadow-theme-sm dark:border-gray-800 dark:bg-white/5" key={menu.code}>
@@ -189,7 +190,7 @@ export default function ProfileUserForm({id}: TProp) {
                             
                             <ul className="flex flex-col gap-4">
                               {
-                                menu.subItems!.map((r: NavSubItem) => {
+                                menu.subItems.map((r: NavSubItem) => {
                                   return (
                                     <li key={r.code} className="grid grid-cols-12">
                                       <div className="col-span-11 mb-5 mr-10 text-sm font-semibold text-gray-800 dark:text-white/90">

@@ -2,7 +2,7 @@
 
 import { loadingAtom } from "@/jotai/global/loading.jotai";
 import { useAtom } from "jotai";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { api } from "@/service/api.service";
 import { configApi, resolveResponse } from "@/service/config.service";
 import { paginationAtom } from "@/jotai/global/pagination.jotai";
@@ -15,10 +15,12 @@ import { NotData } from "@/components/not-data/NotData";
 import { DataTableCard } from "@/components/data-table-card/DataTableCard";
 import { TDataTableColumns } from "@/types/global/data-table-card.type";
 import { UserModalCreate } from "./UserModalCreate";
-import { userAtom, userModalAtom } from "@/jotai/master-data/user.jotai";
+import { userAtom, userModalAtom, userModalUpdatePasswordAtom } from "@/jotai/master-data/user.jotai";
 import { chatOpenAtom } from "@/jotai/global/chat.jotai";
 import { useChat } from "@/hooks/useChat";
 import { MdChat } from "react-icons/md";
+import { UserModalUpdatePassword } from "./UserModalUpdatePassword";
+import { FaLock } from "react-icons/fa";
 
 const columns: TDataTableColumns[] = [
   {title: "Nome", label: "name", type: "text"},
@@ -35,8 +37,9 @@ export default function UserTable() {
   const { isOpen, openModal, closeModal } = useModal();
   const [user, setUser] = useAtom(userAtom);
   const [modal, setModal] = useAtom(userModalAtom);
-  const { openChat } = useChat();
-  const [__, setChatOpen] = useAtom(chatOpenAtom);
+  const [__, setModalUpdatePassword] = useAtom(userModalUpdatePasswordAtom);
+  const [currentUserId, setCurrentUserId] = useState<string>("");
+  const [currentUserAdmin, setCurrentUserAdmin] = useState<boolean>(false);
 
   const getAll = async (page: number) => {
     try {
@@ -77,7 +80,10 @@ export default function UserTable() {
 
     if(action == "edit") {
       setModal(true);
-      setUser(obj);
+    };
+    
+    if(action == "update-password") {
+      setModalUpdatePassword(true);
     };
 
     if(action == "delete") {
@@ -96,6 +102,10 @@ export default function UserTable() {
 
   useEffect(() => {
     if(permissionRead(module, routine)) {
+      const id = localStorage.getItem("AluxCapitalId");
+      const admin = localStorage.getItem("AluxCapitalAdmin");
+      if(id) setCurrentUserId(id);
+      if(admin) setCurrentUserAdmin(admin == "true");
       getAll(1);
     };
   }, [modal]);
@@ -106,6 +116,12 @@ export default function UserTable() {
         pagination.data.length > 0 ? 
         <DataTableCard isActions={permissionUpdate(module, routine) || permissionDelete(module, routine)} pagination={pagination} columns={columns} changePage={changePage} actions={(obj) => (
           <>
+            {
+              permissionUpdate(module, routine) && (obj.id == currentUserId || currentUserAdmin) &&
+              <div title="Alterar Senha" onClick={() => getObj(obj, "update-password")} className="cursor-pointer text-blue-400 hover:text-blue-500">
+                <FaLock />
+              </div>
+            }
             {
               permissionUpdate(module, routine) &&
               <IconEdit action="edit" obj={obj} getObj={getObj}/>
@@ -122,6 +138,7 @@ export default function UserTable() {
       }
       <ModalDelete confirm={destroy} isOpen={isOpen} closeModal={closeModal} title="Excluir Usuário" />
       <UserModalCreate />
+      <UserModalUpdatePassword />
     </div>    
   );
 }

@@ -93,7 +93,7 @@ export const UserModalCreate = () => {
 
     useEffect(() => {
         loaderProfileUser();
-
+        reset(ResetUser);
         if(user.id && modal) {
             getById(user.id);
         };

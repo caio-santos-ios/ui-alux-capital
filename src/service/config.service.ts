@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 const store = getDefaultStore();
 
 export const configApi = (contentTypeJson: boolean = true) => {
-  const localToken = localStorage.getItem("Alux CapitalToken");
+  const localToken = localStorage.getItem("AluxCapitalToken");
   const token = localToken ? localToken : "";
   
   return {
@@ -89,31 +89,31 @@ const handleApiErrors = (error: any) => {
 
 export const saveLocalStorage = (data: TDataLocal, hasToken: boolean = false) => {
   if(hasToken) {
-    localStorage.setItem("Alux CapitalToken", data.token);
-    localStorage.setItem("Alux CapitalRefreshToken", data.refreshToken);
+    localStorage.setItem("AluxCapitalToken", data.token);
+    localStorage.setItem("AluxCapitalRefreshToken", data.refreshToken);
   };
 
   if(data.master) {
-    localStorage.setItem("Alux CapitalMaster", data.master);
+    localStorage.setItem("AluxCapitalMaster", data.master);
   };
 
-  localStorage.setItem("Alux CapitalId", data.id);
-  localStorage.setItem("Alux CapitalName", data.name);
-  localStorage.setItem("Alux CapitalEmail", data.email);
-  localStorage.setItem("Alux CapitalAdmin", data.admin);
-  localStorage.setItem("Alux CapitalPhoto", data.photo);
-  localStorage.setItem("Alux CapitalModules", JSON.stringify(data.modules));
+  localStorage.setItem("AluxCapitalId", data.id);
+  localStorage.setItem("AluxCapitalName", data.name);
+  localStorage.setItem("AluxCapitalEmail", data.email);
+  localStorage.setItem("AluxCapitalAdmin", data.admin);
+  localStorage.setItem("AluxCapitalPhoto", data.photo);
+  localStorage.setItem("AluxCapitalModules", JSON.stringify(data.modules));
 };
 
 export const removeLocalStorage = () => { 
-  localStorage.removeItem("Alux CapitalMaster");
-  localStorage.removeItem("Alux CapitalToken");
-  localStorage.removeItem("Alux CapitalRefreshToken");
-  localStorage.removeItem("Alux CapitalName");
-  localStorage.removeItem("Alux CapitalEmail");
-  localStorage.removeItem("Alux CapitalAdmin");
-  localStorage.removeItem("Alux CapitalPhoto");
-  localStorage.removeItem("Alux CapitalModules");
+  localStorage.removeItem("AluxCapitalMaster");
+  localStorage.removeItem("AluxCapitalToken");
+  localStorage.removeItem("AluxCapitalRefreshToken");
+  localStorage.removeItem("AluxCapitalName");
+  localStorage.removeItem("AluxCapitalEmail");
+  localStorage.removeItem("AluxCapitalAdmin");
+  localStorage.removeItem("AluxCapitalPhoto");
+  localStorage.removeItem("AluxCapitalModules");
 };
 
 export const resolveParamsRequest = (params: any, prefix = '') => {

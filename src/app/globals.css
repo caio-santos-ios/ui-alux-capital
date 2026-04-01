@@ -15,7 +15,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --erp-primary-color: #7127A7;
+  --erp-primary-color: #1A7874;
 
 
   --font-*: initial;
@@ -767,22 +767,18 @@ span.flatpickr-weekday,
 
 .container-card {
   max-height: calc(100dvh - 22rem);
-  /* min-height: calc(100dvh - 22rem); */
   overflow-y: auto;
   margin-bottom: .5rem;
 }
 
 .container-form {
   max-height: calc(100dvh - 26rem);
-  /* min-height: calc(100dvh - 25.7rem); */
   overflow-y: auto;
   margin-bottom: .5rem;
 }
 
 .container-form-not-scroll {
   max-height: calc(100dvh - 30rem);
-  /* overflow-y: hidden;
-  margin-bottom: .5rem; */
 }
 
 .erp-container-table {
@@ -810,13 +806,6 @@ span.flatpickr-weekday,
   width: 100%;
   border-radius: 0.75rem;
 }
-
-.tele-table-thead {
-  /* position: sticky;
-  top: 0;
-  z-index: 1; */
-}
-
 
 ::-webkit-scrollbar {
   width: 5px;

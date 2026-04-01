@@ -4,10 +4,10 @@ const getFromStorage = (key: string) => {
 };
 
 export const permissionRead = (module: string, subModule: string) => {
-    const adminStr = getFromStorage("Alux CapitalAdmin");
+    const adminStr = getFromStorage("AluxCapitalAdmin");
     if (adminStr == "true") return true;
 
-    const modulesStr = getFromStorage("Alux CapitalModules");
+    const modulesStr = getFromStorage("AluxCapitalModules");
     if (modulesStr) {
         const modules = JSON.parse(modulesStr);
         const currentModule = modules.findIndex((m: any) => m.code == module);
@@ -22,10 +22,10 @@ export const permissionRead = (module: string, subModule: string) => {
 };
 
 export const permissionCreate = (module: string, subModule: string) => {
-    const adminStr = getFromStorage("Alux CapitalAdmin");
+    const adminStr = getFromStorage("AluxCapitalAdmin");
     if (adminStr == "true") return true;
 
-    const modulesStr = getFromStorage("Alux CapitalModules");
+    const modulesStr = getFromStorage("AluxCapitalModules");
     if (modulesStr) {
         const modules = JSON.parse(modulesStr);
         const currentModule = modules.findIndex((m: any) => m.code == module);
@@ -40,10 +40,10 @@ export const permissionCreate = (module: string, subModule: string) => {
 };
 
 export const permissionUpdate = (module: string, subModule: string) => {
-    const adminStr = getFromStorage("Alux CapitalAdmin");
+    const adminStr = getFromStorage("AluxCapitalAdmin");
     if (adminStr == "true") return true;
 
-    const modulesStr = getFromStorage("Alux CapitalModules");
+    const modulesStr = getFromStorage("AluxCapitalModules");
     if (modulesStr) {
         const modules = JSON.parse(modulesStr);
         const currentModule = modules.findIndex((m: any) => m.code == module);
@@ -58,10 +58,10 @@ export const permissionUpdate = (module: string, subModule: string) => {
 };
 
 export const permissionDelete = (module: string, subModule: string) => {
-    const adminStr = getFromStorage("Alux CapitalAdmin");
+    const adminStr = getFromStorage("AluxCapitalAdmin");
     if (adminStr == "true") return true;
 
-    const modulesStr = getFromStorage("Alux CapitalModules");
+    const modulesStr = getFromStorage("AluxCapitalModules");
     if (modulesStr) {
         const modules = JSON.parse(modulesStr);
         const currentModule = modules.findIndex((m: any) => m.code == module);

@@ -81,15 +81,6 @@ export default function SignInForm() {
               </div>
             </div>
           </form>
-
-          <div className="mt-5">
-            <p className="text-sm font-normal text-center text-gray-700 dark:text-gray-400 sm:text-start">
-              Não tem uma conta? {""}
-              <Link href="/signup" className="text-erp-primary dark:text-erp-primary">
-                Cadastre-se
-              </Link>
-            </p>
-          </div>
         </div>
       </div>
     </div>

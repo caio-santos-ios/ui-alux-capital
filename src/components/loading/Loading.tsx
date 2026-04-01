@@ -9,7 +9,7 @@ export const Loading = () => {
     if (!loading) return null;
 
     return (
-        <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-white/95 dark:bg-[#080410]/95 backdrop-blur-md">
+        <div className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-white/95 dark:bg-[#080410]/95 backdrop-blur-md loading-wrapper">
             <div className="flex flex-col items-center gap-8">
 
                 {/* Orbs flutuantes */}
@@ -19,7 +19,7 @@ export const Loading = () => {
                     <div
                         className="absolute inset-0 m-auto w-8 h-8 rounded-full bg-brand-500"
                         style={{
-                            boxShadow: "0 0 30px 8px rgba(113,39,167,0.5), 0 0 60px 16px rgba(113,39,167,0.2)",
+                            boxShadow: "0 0 30px 8px var(--brand-glow-500-md), 0 0 60px 16px var(--brand-glow-500-sm)",
                             animation: "breathe 2s ease-in-out infinite",
                         }}
                     />
@@ -31,7 +31,7 @@ export const Loading = () => {
                     >
                         <div
                             className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-brand-400"
-                            style={{ boxShadow: "0 0 12px 4px rgba(168,98,220,0.6)" }}
+                            style={{ boxShadow: "0 0 12px 4px var(--brand-glow-400)" }}
                         />
                     </div>
 
@@ -42,7 +42,7 @@ export const Loading = () => {
                     >
                         <div
                             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-brand-300"
-                            style={{ boxShadow: "0 0 10px 3px rgba(196,146,240,0.5)" }}
+                            style={{ boxShadow: "0 0 10px 3px var(--brand-glow-300)" }}
                         />
                     </div>
 
@@ -53,7 +53,7 @@ export const Loading = () => {
                     >
                         <div
                             className="absolute top-1/2 right-0 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-brand-600"
-                            style={{ boxShadow: "0 0 8px 3px rgba(80,20,130,0.7)" }}
+                            style={{ boxShadow: "0 0 8px 3px var(--brand-glow-600)" }}
                         />
                     </div>
 
@@ -87,6 +87,13 @@ export const Loading = () => {
             </div>
 
             <style>{`
+                .loading-wrapper {
+                    --brand-glow-300:    rgba(196, 146, 240, 0.5);
+                    --brand-glow-400:    rgba(168,  98, 220, 0.6);
+                    --brand-glow-500-md: rgba(113,  39, 167, 0.5);
+                    --brand-glow-500-sm: rgba(113,  39, 167, 0.2);
+                    --brand-glow-600:    rgba( 80,  20, 130, 0.7);
+                }
                 @keyframes breathe {
                     0%, 100% { transform: scale(1);   opacity: 1; }
                     50%       { transform: scale(1.3); opacity: 0.8; }

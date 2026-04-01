@@ -16,7 +16,7 @@ export const Autorization = () => {
     const pathname = usePathname();
 
     useEffect(() => {
-        const localToken = localStorage.getItem("Alux CapitalToken");
+        const localToken = localStorage.getItem("AluxCapitalToken");
         const token = localToken ? localToken : "";
 
         if(!token) {
@@ -29,10 +29,10 @@ export const Autorization = () => {
                 setIsAdmin(false);
             };
         } else {
-            const admin = localStorage.getItem("Alux CapitalAdmin");
-            const name = localStorage.getItem("Alux CapitalName");
-            const email = localStorage.getItem("Alux CapitalEmail");
-            const photo = localStorage.getItem("Alux CapitalPhoto");
+            const admin = localStorage.getItem("AluxCapitalAdmin");
+            const name = localStorage.getItem("AluxCapitalName");
+            const email = localStorage.getItem("AluxCapitalEmail");
+            const photo = localStorage.getItem("AluxCapitalPhoto");
 
             setUserLogger({
                 name: name ? name : "",
