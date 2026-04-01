@@ -46,7 +46,7 @@ export default function UserMetaCard() {
     try {
       const { status, data} = await api.put(`/users/profile-photo`, form, configApi(false));
       const result = data.result.data;
-      localStorage.setItem("telemovviPhoto", result.photo);
+      localStorage.setItem("Alux CapitalPhoto", result.photo);
       
       setUserLogger({
         ...userLogger,

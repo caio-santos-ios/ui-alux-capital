@@ -3,7 +3,7 @@ import LoggerTable from "@/components/pages/settings/logger/LoggerTable";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Telemovvi | Logs",
+  title: "Alux Capital | Logs",
   description: "This is Next.js Form Elements page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
 };
 

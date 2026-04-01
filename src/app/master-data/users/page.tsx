@@ -4,7 +4,7 @@ import UserTable from "@/components/pages/master-data/user/UserTable";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Telemovvi | Usuários",
+  title: "Alux Capital | Usuários",
   description: "This is Next.js Form Elements page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
 };
 

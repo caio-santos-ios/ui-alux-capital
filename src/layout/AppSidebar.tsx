@@ -34,8 +34,8 @@ const AppSidebar: React.FC = () => {
   const getAuthorizedMenu = useCallback(() => {
     if (typeof window === "undefined") return [];
 
-    const modulesStr = localStorage.getItem("telemovviModules");
-    const masterStr = localStorage.getItem("telemovviMaster");
+    const modulesStr = localStorage.getItem("Alux CapitalModules");
+    const masterStr = localStorage.getItem("Alux CapitalMaster");
     const isMaster = masterStr ? masterStr == "true" : false;
 
     if (!modulesStr) return menu;

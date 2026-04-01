@@ -7,7 +7,7 @@ import StatisticsChart from "@/components/ecommerce/StatisticsChart";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Telemovvi | Dashboard",
+  title: "Alux Capital | Dashboard",
   description: "This is Next.js Signin Page TailAdmin Dashboard Template",
 };
 

@@ -34,3 +34,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+<!-- CORES -->
+Primárias
+
+#1A7874 — teal principal, usado nos cabeçalhos, botões ativos e barras
+#155F5C — tom mais escuro do teal, bordas e hover
+#0D4A47 — teal profundo, fundo do nav lateral
+
+Acento
+
+#E8B400 — âmbar/dourado, usado no botão "LINEAR" para destaque
+#CC2222 — vermelho, nas barras de cronograma com alerta
+
+Neutros
+
+#1A1A1A — quase preto, fundo da barra de navegação superior
+#FFFFFF — branco, fundo das células
+#F0F0EE / #D6D6D4 — cinzas para campos inativos e linhas alternadas

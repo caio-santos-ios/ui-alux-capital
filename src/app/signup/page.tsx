@@ -2,7 +2,7 @@ import SignUpForm from "@/components/auth/SignUpForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Telemovvi | Cadastrar-se",
+  title: "Alux Capital | Cadastrar-se",
   description: "This is Next.js Signin Page TailAdmin Dashboard Template",
 };
 

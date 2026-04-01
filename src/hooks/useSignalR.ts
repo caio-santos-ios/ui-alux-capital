@@ -27,7 +27,7 @@ export const useSignalR = ({ hubUrl, onConnected, onDisconnected }: UseSignalROp
     const [isConnected, setIsConnected] = useState(false);
 
     useEffect(() => {
-        const token = localStorage.getItem("telemovviToken") ?? "";
+        const token = localStorage.getItem("Alux CapitalToken") ?? "";
         if (!token) return;
 
         let isMounted = true;

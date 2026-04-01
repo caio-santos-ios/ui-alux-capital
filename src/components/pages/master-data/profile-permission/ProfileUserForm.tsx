@@ -147,7 +147,7 @@ export default function ProfileUserForm({id}: TProp) {
   };
 
   useEffect(() => {
-    const masterStr = localStorage.getItem("telemovviMaster");
+    const masterStr = localStorage.getItem("Alux CapitalMaster");
     if(masterStr) setIsMaster(masterStr === "true");
 
     const initial = async () => {

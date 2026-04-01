@@ -53,34 +53,21 @@
   --color-white: #ffffff;
   --color-black: #101828;
 
-  /* --color-brand-25: #f2f7ff;
-  --color-brand-50: #ecf3ff;
-  --color-brand-100: #dde9ff;
-  --color-brand-200: #c2d6ff;
-  --color-brand-300: #9cb9ff;
-  --color-brand-400: #7592ff; */
-  --color-brand-25:  #FAF5FF; /* Fundo ultra leve, quase branco */
-  --color-brand-50:  #F5EBFF; /* Fundo de seção ou hover leve */
-  --color-brand-100: #EDDBFF; /* Bordas suaves ou backgrounds de badges */
-  --color-brand-200: #DBBFFF; /* Desativado ou estado de foco */
-  --color-brand-300: #C492F0; /* Cor de apoio para elementos secundários */
-  --color-brand-400: #A862DC;
+  --color-brand-25:  #F0FAFA; /* Fundo ultra leve, quase branco */
+  --color-brand-50:  #E0F5F4; /* Fundo de seção ou hover leve */
+  --color-brand-100: #C2EDEB; /* Bordas suaves ou backgrounds de badges */
+  --color-brand-200: #8DDBD8; /* Desativado ou estado de foco */
+  --color-brand-300: #4BBFBA; /* Cor de apoio para elementos secundários */
+  --color-brand-400: #2AA39E;
 
   /* PRIMARY COLOR */
-  --color-brand-500: #7127A7;
-  
-  
-  /* --color-brand-600: #3641f5;
-  --color-brand-700: #2a31d8;
-  --color-brand-800: #252dae;
-  --color-brand-900: #262e89;
-  --color-brand-950: #161950; */
-  
-  --color-brand-600: #7127A7; /* Sua cor primária */
-  --color-brand-700: #591F84; /* Tom mais fechado */
-  --color-brand-800: #451866; /* Tom profundo */
-  --color-brand-900: #35124E; /* Tom muito escuro */
-  --color-brand-950: #1F0B2E;
+  --color-brand-500: #1A7874;
+
+  --color-brand-600: #1A7874; /* Sua cor primária */
+  --color-brand-700: #155F5C; /* Tom mais fechado */
+  --color-brand-800: #0D4A47; /* Tom profundo */
+  --color-brand-900: #0A3533; /* Tom muito escuro */
+  --color-brand-950: #051A19;
 
   --color-blue-light-25: #f5fbff;
   --color-blue-light-50: #f0f9ff;

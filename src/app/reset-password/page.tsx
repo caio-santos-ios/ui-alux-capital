@@ -2,7 +2,7 @@ import ResetPasswordForm from "@/components/auth/ResetPasswordForm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Telemovvi | Recuperar Senha",
+  title: "Alux Capital | Recuperar Senha",
   description: "This is Next.js Signin Page TailAdmin Dashboard Template",
 };
 

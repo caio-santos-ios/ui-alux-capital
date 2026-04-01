@@ -2,7 +2,7 @@ import CorfirmAccountLink from "@/components/auth/CorfirmAccountLink";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Telemovvi | Confirmar Conta",
+  title: "Alux Capital | Confirmar Conta",
   description: "This is Next.js Signin Page TailAdmin Dashboard Template",
 };
 

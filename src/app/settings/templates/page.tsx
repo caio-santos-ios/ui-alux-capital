@@ -4,7 +4,7 @@ import TemplateTable from "@/components/pages/settings/template/TemplateTable";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Telemovvi | Templates",
+  title: "Alux Capital | Templates",
   description: "This is Next.js Form Elements page for TailAdmin - Next.js Tailwind CSS Admin Dashboard Template",
 };
 

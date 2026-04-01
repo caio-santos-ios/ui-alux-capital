@@ -16,7 +16,7 @@ export const Autorization = () => {
     const pathname = usePathname();
 
     useEffect(() => {
-        const localToken = localStorage.getItem("telemovviToken");
+        const localToken = localStorage.getItem("Alux CapitalToken");
         const token = localToken ? localToken : "";
 
         if(!token) {
@@ -29,10 +29,10 @@ export const Autorization = () => {
                 setIsAdmin(false);
             };
         } else {
-            const admin = localStorage.getItem("telemovviAdmin");
-            const name = localStorage.getItem("telemovviName");
-            const email = localStorage.getItem("telemovviEmail");
-            const photo = localStorage.getItem("telemovviPhoto");
+            const admin = localStorage.getItem("Alux CapitalAdmin");
+            const name = localStorage.getItem("Alux CapitalName");
+            const email = localStorage.getItem("Alux CapitalEmail");
+            const photo = localStorage.getItem("Alux CapitalPhoto");
 
             setUserLogger({
                 name: name ? name : "",
