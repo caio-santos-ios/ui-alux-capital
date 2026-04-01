@@ -1,0 +1,62 @@
+"use client";
+
+import { loadingAtom } from "@/jotai/global/loading.jotai";
+import { api } from "@/service/api.service";
+import { resolveResponse } from "@/service/config.service";
+import { ResetConfirmAccount, TConfirmAccount } from "@/types/auth/confirmAccount.type";
+import { useAtom } from "jotai";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+
+export default function CorfirmAccountLink({code}: {code: string}) {
+  const [_, setIsLoading] = useAtom(loadingAtom);
+  const [success, setSuccess] = useState<boolean>(true);
+  const router = useRouter();
+
+  const { register, handleSubmit, reset } = useForm<TConfirmAccount>({
+    defaultValues: ResetConfirmAccount
+  });
+  
+  const confirm: SubmitHandler<TConfirmAccount> = async (body: TConfirmAccount) => {
+    try {
+      setIsLoading(true);
+      const {data} = await api.post(`/auth/confirm-account`, body);
+      resolveResponse({status: 201, message: data.result.message});
+      reset(ResetConfirmAccount);
+      setSuccess(true);
+    } catch (error) {
+      setSuccess(false);
+      resolveResponse(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    confirm({code: code});
+  }, []);
+
+  return (
+    <div className="flex flex-col flex-1 lg:w-1/2 w-full max-w-[90dvw] overflow-y-auto no-scrollbar">
+      <div className="flex flex-col justify-center flex-1 w-full max-w-md mx-auto">
+        <div>
+          <form onSubmit={handleSubmit(confirm)}>
+            <div className="space-y-5">
+              {
+                success ?
+                <h1 className="mb-1.5 block text-3xl font-medium text-gray-700 dark:text-gray-400">Conta confirmada com sucesso</h1>
+                :
+                <h1 className="mb-1.5 block text-3xl font-medium text-gray-700 dark:text-gray-400">Falha ao confirmar conta</h1>
+              }
+            </div>
+            <Link href="/" className="text-brand-500 hover:text-brand-600 dark:text-brand-400"> 
+              Fazer login
+            </Link>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}

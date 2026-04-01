@@ -1,0 +1,33 @@
+.loading-overlay {
+  background: rgba(240,244,248,.92);
+  backdrop-filter: blur(4px);
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; justify-content: center; align-items: center;
+}
+.dark .loading-overlay { background: rgba(13,27,46,.93); }
+
+.container-loader {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.loader {
+  width: 142px; height: 142px;
+  border-radius: 50%;
+  border: 5px solid var(--color-brand-200);
+  border-top-color: var(--color-brand-500);
+  border-right-color: var(--color-brand-800);
+  animation: spin-loader .65s linear infinite;
+}
+
+@keyframes spin-loader { to { transform: rotate(360deg); } }
+
+.title-loader {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-brand-800);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
